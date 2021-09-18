@@ -1,9 +1,18 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "olio",
+    title: "Design Leadership Consultant | DesignOps Consulting",
+    titleTemplate: ' | Design Consulting',
+    description: "DesignOps and UX Strategy Consultant. Design Operations Consulting.",
+    keywords: "UX Design Consultant Branding",
+    copyright: "Copyright 2021, Galenti Consulting, LLC. All rights reserved.",
+    author: "J Galenti",
+    contact: "galenticonsulting@gmail.com",
+    siteUrl: "https://galenti.design", // No trailing slash allowed!
+    image: "/images/socialThumb.jpg", // Path to your image you placed in the 'static' folder
+    twitterUsername: "@jgalenti",
   },
   plugins: [
+    "gatsby-plugin-image",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
@@ -17,6 +26,27 @@ module.exports = {
     },
     "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: process.env.AIRTABLE_API_KEY, // may instead specify via env, see below
+        concurrency: 5, // default, see using markdown and attachments for more information
+        tables: [
+          {
+            baseId: process.env.AIRTABLE_DB,
+            tableName: `Gear`,
+          },
+          {
+            baseId: process.env.AIRTABLE_DB,
+            tableName: `Shop`,
+          },
+          {
+            baseId: process.env.AIRTABLE_DB,
+            tableName: `Freebies`,
+          }
+        ]
+      }
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
