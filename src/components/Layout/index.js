@@ -4,6 +4,7 @@ import React from "react"
 import GlobalStyle from '../Theme/Global'
 import Responsive from '../Responsive'
 import Header from "../Header"
+import MobileNav from "../MobileNav"
 import Section from "../Section"
 import ContactMe from "../Contact"
 import Footer from '../Footer'
@@ -16,6 +17,7 @@ const Layout = ({children}) => {
             <GlobalStyle />
             <LayoutWrap>
                 <Header />
+                <MobileNav />
                 { children }
                 <Section>
                     <ContactMe />

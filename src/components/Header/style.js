@@ -1,6 +1,7 @@
 import { Link as GatsbyLink } from 'gatsby'
 import styled from 'styled-components'
-import color from './../Theme/Color'
+import color from '../Theme/Color'
+import media from '../Responsive/media'
 
 const HeaderWrap = styled.nav`
     align-items: center;
@@ -31,7 +32,7 @@ const LogoIcon = styled.span`
     color: ${color.grey.medium};
     font-size: 2.1em;
     font-weight: 700;
-    height: 24px;
+    /* height: 24px; */
     margin-right: 10px;
     text-shadow: 0 1px 3px ${color.shadow.light};
     transition: 333ms ease-in;
@@ -47,21 +48,26 @@ const LogoText = styled.span`
 `
 const NavWrap = styled.nav`
     align-items: center;
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: flex-start;
+
+    ${media.tabletSM`
+        display: flex;
+    `};
 `
 const NavItem = styled(GatsbyLink)`
     border: solid 1px transparent;
-    border-radius: 12px;
-    color: ${color.primary.light};
+    /* border-radius: 12px; */
+    box-sizing: border-box;
+    color: ${color.primary.base};
     font-size: 0.9em;
     margin-left: 4px;
     padding: 8px 12px;
     transition: all 333ms ease-in;
 
     &:hover {
-        background-color: ${color.grey.offWhite};
+        /* background-color: ${color.grey.offWhite}; */
         /* border-color: ${color.primary.light}; */
         box-shadow: 0 4px 9px -6px ${color.shadow.base};
         color: ${color.primary.light};

@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: "Design Leadership Consultant | DesignOps Consulting",
@@ -34,16 +38,8 @@ module.exports = {
         tables: [
           {
             baseId: process.env.AIRTABLE_DB,
-            tableName: `Gear`,
+            tableName: `Jobs`,
           },
-          {
-            baseId: process.env.AIRTABLE_DB,
-            tableName: `Shop`,
-          },
-          {
-            baseId: process.env.AIRTABLE_DB,
-            tableName: `Freebies`,
-          }
         ]
       }
     },

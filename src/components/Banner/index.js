@@ -1,10 +1,8 @@
 import React from "react"
-import { StaticImage } from "gatsby-plugin-image"
 
 // components
 import { 
     BannerWrap,
-    BannerBG,
     BannerCTA
 } from './style'
 import Contain from "../Contain"
